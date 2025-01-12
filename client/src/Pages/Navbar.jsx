@@ -17,9 +17,10 @@ const Navbar = () => {
           HairStyle
         </a>
         <form class="d-flex">
-          <Link to="/login" class="btn btn-outline-success" type="button">
+          <Link to="/login" className="btn btn-outline-primary" type="button">
             Admin
           </Link>
+          <div id="google_translate_element" className="btn btn-outline-primary"></div>
         </form>
       </div>
     </nav>
