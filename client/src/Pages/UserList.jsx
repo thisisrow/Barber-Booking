@@ -6,7 +6,7 @@ const UserList = () => {
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().slice(0, 10));
   const fetchBookings = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/users/alluser");
+      const response = await axios.get("https://barber-booking-xfdz.onrender.com/api/users/alluser");
       const filteredBookings = response.data.bookings.filter((booking) => {
         // Format bookingDate to "YYYY-MM-DD"
         const bookingDate = new Date(booking.bookingDate).toISOString().slice(0, 10);
@@ -22,7 +22,7 @@ const UserList = () => {
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem("bookingToken");
-      await axios.delete("http://localhost:5000/api/users/deleting", {
+      await axios.delete("https://barber-booking-xfdz.onrender.com/api/users/deleting", {
         data: { token, id }, 
       });
       alert("Booking deleted!");

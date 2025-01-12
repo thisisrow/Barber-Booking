@@ -7,7 +7,7 @@ const UserListAdmin = () => {
 
   const fetchBookings = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/users/alluser");
+      const response = await axios.get("https://barber-booking-xfdz.onrender.com/api/users/alluser");
       const filteredBookings = response.data.bookings.filter((booking) => {
         // Format bookingDate to "YYYY-MM-DD"
         const bookingDate = new Date(booking.bookingDate).toISOString().slice(0, 10);
@@ -22,7 +22,7 @@ const UserListAdmin = () => {
   const handleDelete = async (bookingId) => {
     try {
       // Make the DELETE request to the backend
-      const response = await axios.delete("http://localhost:5000/api/users/admin", {
+      const response = await axios.delete("https://barber-booking-xfdz.onrender.com/api/users/admin", {
         data: { bookingId } // Pass the bookingId in the request body
       });
   

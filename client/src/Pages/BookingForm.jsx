@@ -19,7 +19,7 @@ const BookingForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/users/booking",
+        "https://barber-booking-xfdz.onrender.com/api/users/booking",
         formData
       );
       const { token } = response.data;
